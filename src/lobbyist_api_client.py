@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import sys
-# sys.path.append('../')
 from enum import Enum
 import requests
 from src import *
@@ -11,27 +10,18 @@ logger = logging.getLogger(__name__)
 
 class Routes:
     SYSTEM_REPORT = '/system'
-    SYNC_FEED = '/lobbyist/sync/feeds'
-    SYNC_SUBSCRIPTIONS = '/lobbyist/v101/sync/subscriptions'
-    SYNC_SESSIONS = '/lobbyist/v101/sync/sessions'
+    SYNC_FEED = '/sync/feeds'
+    SYNC_SUBSCRIPTIONS = '/sync/subscriptions'
+    SYNC_SESSIONS = '/sync/sessions'
 
     # First parameter is Session ID. Second parameter is Command Type
-    SYNC_SESSION_COMMAND = '/lobbyist/v101/sync/sessions/%s/commands/%s'
+    SYNC_SESSION_COMMAND = '/sync/sessions/%s/commands/%s'
 
     # First parameter is Subscription ID. Second parameter is Command Type
-    SYNC_SUBSCRIPTION_COMMAND = '/lobbyist/v101/sync/subscriptions/%s/commands/%s'
+    SYNC_SUBSCRIPTION_COMMAND = '/sync/subscriptions/%s/commands/%s'
 
     # Parameter is the Subscription ID
-    FETCH_SUBSCRIPTION = '/lobbyist/v101/sync/subscriptions/%s'
-
-    # First parameter is the Root Filing NID
-    FETCH_FILING = '/lobbyist/v101/filings/%s'
-    FETCH_EFILE_CONTENT = '/lobbyist/v101/filings/%s/contents/efiling'
-    QUERY_FILINGS = '/lobbyist/v101/filings'
-
-    # First parameter is the Element ID
-    FETCH_FILING_ELEMENTS = '/lobbyist/v101/filing-elements/%s'
-    QUERY_FILING_ELEMENTS = '/lobbyist/v101/filing-elements'
+    FETCH_SUBSCRIPTION = '/sync/subscriptions/%s'
 
 
 class LobbyistApiClient:
@@ -59,32 +49,33 @@ class LobbyistApiClient:
             logger.debug('\tComponent Build Version: %s', comp['buildVersion'])
         return sr
 
-    def create_subscription(self, feed_name_arg, subscription_name_arg):
+    def create_subscription(self, subscription_name_arg):
         logger.debug('Creating a SyncSubscription')
         url = self.base_url + Routes.SYNC_SUBSCRIPTIONS
         body = {
-            'feedName': feed_name_arg,
-            'name': subscription_name_arg
+            'name': subscription_name_arg,
+            'autoComplete': False
         }
         return self.post_http_request(url, body)
 
-    def create_session(self, sub_id):
+    def create_session(self, sub_id, is_auto_complete=False):
         logger.debug(f'Creating a SyncSession using SyncSubscription {sub_id}')
         url = self.base_url + Routes.SYNC_SESSIONS
         body = {
-            'subscriptionId': sub_id
+            'subscriptionId': sub_id,
+            'autoComplete': is_auto_complete
         }
         return self.post_http_request(url, body)
 
-    def retrieve_sync_feeds(self):
-        logger.debug('Retrieving SyncFeed')
-        url = self.base_url + Routes.SYNC_FEED
-        return self.get_http_request(url)
+    # def retrieve_sync_feeds(self):
+    #     logger.debug('Retrieving SyncFeed')
+    #     url = self.base_url + Routes.SYNC_FEED
+    #     return self.get_http_request(url)
 
     def fetch_sync_topics(self, session_id, topic, limit=1000, offset=0):
         logger.debug(f'Fetching {topic} topic: offset={offset}, limit={limit}\n')
         params = {'limit': limit, 'offset': offset}
-        url = f'{self.base_url}/{Routes.SYNC_SESSIONS}/{session_id}/{topic}'
+        url = f'{self.base_url}/{Routes.SYNC_SESSIONS}/{session_id}/topics/{topic}'
         return self.get_http_request(url, params)
 
     def execute_session_command(self, session_id, session_command_type):
