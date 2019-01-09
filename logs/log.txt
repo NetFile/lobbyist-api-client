@@ -1,0 +1,164 @@
+2019-01-08 15:33:29,004 root         INFO     Starting Lobbyist API synchronization lifecycle
+2019-01-08 15:33:29,005 root         INFO     Rebuilding database schema
+2019-01-08 15:33:29,245 root         ERROR    Error running LobbyistApiClient: 'dict' object has no attribute 'name'
+2019-01-08 15:33:56,283 root         INFO     Starting Lobbyist API synchronization lifecycle
+2019-01-08 15:33:56,283 root         INFO     Rebuilding database schema
+2019-01-08 15:33:56,297 root         ERROR    Error running LobbyistApiClient: 'dict' object has no attribute 'name'
+2019-01-08 15:34:30,001 root         INFO     Starting Lobbyist API synchronization lifecycle
+2019-01-08 15:34:30,001 root         INFO     Rebuilding database schema
+2019-01-08 15:34:30,016 root         ERROR    Error running LobbyistApiClient: 'dict' object has no attribute 'name'
+2019-01-08 15:34:54,698 root         INFO     Starting Lobbyist API synchronization lifecycle
+2019-01-08 15:35:28,811 root         ERROR    Error running LobbyistApiClient: 'dict' object has no attribute 'name'
+2019-01-08 15:35:39,907 root         INFO     Starting Lobbyist API synchronization lifecycle
+2019-01-08 15:38:26,748 root         INFO     Starting Lobbyist API synchronization lifecycle
+2019-01-08 15:38:26,749 lobbyist_api_client DEBUG    Checking to verify the Lobbyist API system is ready
+2019-01-08 15:38:26,749 lobbyist_api_client DEBUG    Making GET HTTP request to http://localhost:12032/api/system
+2019-01-08 15:38:26,755 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:12032
+2019-01-08 15:38:26,767 urllib3.connectionpool DEBUG    http://localhost:12032 "GET /api/system HTTP/1.1" 200 None
+2019-01-08 15:38:26,768 lobbyist_api_client DEBUG    General Status: Ready
+2019-01-08 15:38:26,769 lobbyist_api_client DEBUG    System Name: LobbyistApi
+2019-01-08 15:38:26,769 lobbyist_api_client DEBUG    	Component Name: LobbyistApi
+2019-01-08 15:38:26,769 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 15:38:26,769 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 15:38:26,769 root         ERROR    Error running LobbyistApiClient: 'build_date_time'
+2019-01-08 15:38:40,467 root         INFO     Starting Lobbyist API synchronization lifecycle
+2019-01-08 15:38:40,469 lobbyist_api_client DEBUG    Checking to verify the Lobbyist API system is ready
+2019-01-08 15:38:40,469 lobbyist_api_client DEBUG    Making GET HTTP request to http://localhost:12032/api/system
+2019-01-08 15:38:40,474 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:12032
+2019-01-08 15:38:40,486 urllib3.connectionpool DEBUG    http://localhost:12032 "GET /api/system HTTP/1.1" 200 None
+2019-01-08 15:38:40,489 lobbyist_api_client DEBUG    General Status: Ready
+2019-01-08 15:38:40,489 lobbyist_api_client DEBUG    System Name: LobbyistApi
+2019-01-08 15:38:40,489 lobbyist_api_client DEBUG    	Component Name: LobbyistApi
+2019-01-08 15:38:40,490 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 15:38:40,490 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 15:41:03,325 root         INFO     Starting Lobbyist API synchronization lifecycle
+2019-01-08 15:41:03,326 lobbyist_api_client DEBUG    Checking to verify the Lobbyist API system is ready
+2019-01-08 15:41:03,326 lobbyist_api_client DEBUG    Making GET HTTP request to http://localhost:12032/api/system
+2019-01-08 15:41:03,330 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:12032
+2019-01-08 15:41:03,342 urllib3.connectionpool DEBUG    http://localhost:12032 "GET /api/system HTTP/1.1" 200 None
+2019-01-08 15:41:03,344 lobbyist_api_client DEBUG    General Status: Ready
+2019-01-08 15:41:03,345 lobbyist_api_client DEBUG    System Name: LobbyistApi
+2019-01-08 15:41:03,345 lobbyist_api_client DEBUG    	Component Name: LobbyistApi
+2019-01-08 15:41:03,345 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 15:41:03,346 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 15:41:03,346 lobbyist_api_client DEBUG    	Component Build DateTime: 2019-01-08T15:29:48.3587573-08:00
+2019-01-08 15:41:03,346 lobbyist_api_client DEBUG    	Component Build Version: 1.0.0.0
+2019-01-08 15:41:03,346 lobbyist_api_client DEBUG    	Component Name: LobbyistEngine
+2019-01-08 15:41:03,347 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 15:41:03,347 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 15:41:03,347 lobbyist_api_client DEBUG    	Component Build DateTime: 2019-01-08T15:29:33.6537446-08:00
+2019-01-08 15:41:03,348 lobbyist_api_client DEBUG    	Component Build Version: 1.0.0.0
+2019-01-08 15:41:03,348 root         ERROR    Error running LobbyistApiClient: 'dict' object has no attribute 'is_ready'
+2019-01-08 15:41:44,226 root         INFO     Starting Lobbyist API synchronization lifecycle
+2019-01-08 15:41:44,227 lobbyist_api_client DEBUG    Checking to verify the Lobbyist API system is ready
+2019-01-08 15:41:44,227 lobbyist_api_client DEBUG    Making GET HTTP request to http://localhost:12032/api/system
+2019-01-08 15:41:44,230 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:12032
+2019-01-08 15:41:44,238 urllib3.connectionpool DEBUG    http://localhost:12032 "GET /api/system HTTP/1.1" 200 None
+2019-01-08 15:41:44,240 lobbyist_api_client DEBUG    General Status: Ready
+2019-01-08 15:41:44,240 lobbyist_api_client DEBUG    System Name: LobbyistApi
+2019-01-08 15:41:44,240 lobbyist_api_client DEBUG    	Component Name: LobbyistApi
+2019-01-08 15:41:44,241 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 15:41:44,241 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 15:41:44,241 lobbyist_api_client DEBUG    	Component Build DateTime: 2019-01-08T15:29:48.3587573-08:00
+2019-01-08 15:41:44,241 lobbyist_api_client DEBUG    	Component Build Version: 1.0.0.0
+2019-01-08 15:41:44,241 lobbyist_api_client DEBUG    	Component Name: LobbyistEngine
+2019-01-08 15:41:44,241 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 15:41:44,241 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 15:41:44,241 lobbyist_api_client DEBUG    	Component Build DateTime: 2019-01-08T15:29:33.6537446-08:00
+2019-01-08 15:41:44,241 lobbyist_api_client DEBUG    	Component Build Version: 1.0.0.0
+2019-01-08 15:43:11,981 root         INFO     Starting Lobbyist API synchronization lifecycle
+2019-01-08 15:43:11,982 lobbyist_api_client DEBUG    Checking to verify the Lobbyist API system is ready
+2019-01-08 15:43:11,982 lobbyist_api_client DEBUG    Making GET HTTP request to http://localhost:12032/api/system
+2019-01-08 15:43:11,985 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:12032
+2019-01-08 15:43:11,996 urllib3.connectionpool DEBUG    http://localhost:12032 "GET /api/system HTTP/1.1" 200 None
+2019-01-08 15:43:11,997 lobbyist_api_client DEBUG    General Status: Ready
+2019-01-08 15:43:11,997 lobbyist_api_client DEBUG    System Name: LobbyistApi
+2019-01-08 15:43:11,998 lobbyist_api_client DEBUG    	Component Name: LobbyistApi
+2019-01-08 15:43:11,998 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 15:43:11,998 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 15:43:11,998 lobbyist_api_client DEBUG    	Component Build DateTime: 2019-01-08T15:29:48.3587573-08:00
+2019-01-08 15:43:11,998 lobbyist_api_client DEBUG    	Component Build Version: 1.0.0.0
+2019-01-08 15:43:11,998 lobbyist_api_client DEBUG    	Component Name: LobbyistEngine
+2019-01-08 15:43:11,998 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 15:43:11,998 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 15:43:11,998 lobbyist_api_client DEBUG    	Component Build DateTime: 2019-01-08T15:29:33.6537446-08:00
+2019-01-08 15:43:11,999 lobbyist_api_client DEBUG    	Component Build Version: 1.0.0.0
+2019-01-08 15:43:15,844 root         INFO     Lobbyist API Sync is Ready
+2019-01-08 15:43:15,844 root         INFO     Retrieving available Lobbyist sync feed
+2019-01-08 15:44:05,093 lobbyist_api_client DEBUG    Retrieving SyncFeed
+2019-01-08 15:44:05,094 lobbyist_api_client DEBUG    Making GET HTTP request to http://localhost:12032/api/lobbyist/v101/sync/feeds
+2019-01-08 15:44:05,104 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:12032
+2019-01-08 15:44:05,138 urllib3.connectionpool DEBUG    http://localhost:12032 "GET /api/lobbyist/v101/sync/feeds HTTP/1.1" 401 None
+2019-01-08 15:44:49,896 root         ERROR    Error running LobbyistApiClient: Error requesting Url: http://localhost:12032/api/lobbyist/v101/sync/feeds, Response code: 401. Error Message: {"message":"Not authenticated","exceptionType":"System.Security.Authentication.AuthenticationException","stackTrace":"   at netfile.global.engine.nancy.AbstractNancyBoot.<>c__DisplayClass5_0.<ConfigurePipelines>b__0(NancyContext ctx) in C:\\dvlp\\cascade\\source\\netfile\\global\\engine\\nancy\\AbstractNancyBoot.cs:line 81\r\n   at Nancy.BeforePipeline.<>c__DisplayClass4.<Wrap>b__3(NancyContext ctx, CancellationToken ct)","errorMessages":[{"message":"Not authenticated","errorCode":null,"propertyName":null}]}
+2019-01-08 15:48:16,982 root         INFO     Starting Lobbyist API synchronization lifecycle
+2019-01-08 15:48:23,318 lobbyist_api_client DEBUG    Checking to verify the Lobbyist API system is ready
+2019-01-08 15:48:23,318 lobbyist_api_client DEBUG    Making GET HTTP request to http://localhost:12032/api/system
+2019-01-08 15:48:23,322 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:12032
+2019-01-08 15:48:23,334 urllib3.connectionpool DEBUG    http://localhost:12032 "GET /api/system HTTP/1.1" 200 None
+2019-01-08 15:48:23,336 lobbyist_api_client DEBUG    General Status: Ready
+2019-01-08 15:48:23,336 lobbyist_api_client DEBUG    System Name: LobbyistApi
+2019-01-08 15:48:23,336 lobbyist_api_client DEBUG    	Component Name: LobbyistApi
+2019-01-08 15:48:23,336 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 15:48:23,337 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 15:48:23,337 lobbyist_api_client DEBUG    	Component Build DateTime: 2019-01-08T15:29:48.3587573-08:00
+2019-01-08 15:48:23,337 lobbyist_api_client DEBUG    	Component Build Version: 1.0.0.0
+2019-01-08 15:48:23,337 lobbyist_api_client DEBUG    	Component Name: LobbyistEngine
+2019-01-08 15:48:23,337 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 15:48:23,337 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 15:48:23,337 lobbyist_api_client DEBUG    	Component Build DateTime: 2019-01-08T15:29:33.6537446-08:00
+2019-01-08 15:48:23,338 lobbyist_api_client DEBUG    	Component Build Version: 1.0.0.0
+2019-01-08 15:48:23,338 root         INFO     Lobbyist API Sync is Ready
+2019-01-08 15:48:23,338 root         INFO     Retrieving available Lobbyist sync feed
+2019-01-08 15:48:23,338 lobbyist_api_client DEBUG    Retrieving SyncFeed
+2019-01-08 15:48:23,338 lobbyist_api_client DEBUG    Making GET HTTP request to http://localhost:12032/api/lobbyist/v101/sync/feeds
+2019-01-08 15:48:23,340 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:12032
+2019-01-08 15:48:23,379 urllib3.connectionpool DEBUG    http://localhost:12032 "GET /api/lobbyist/v101/sync/feeds HTTP/1.1" 401 None
+2019-01-08 15:48:23,380 root         ERROR    Error running LobbyistApiClient: Error requesting Url: http://localhost:12032/api/lobbyist/v101/sync/feeds, Response code: 401. Error Message: {"message":"Not authenticated","exceptionType":"System.Security.Authentication.AuthenticationException","stackTrace":"   at netfile.global.engine.nancy.AbstractNancyBoot.<>c__DisplayClass5_0.<ConfigurePipelines>b__0(NancyContext ctx) in C:\\dvlp\\cascade\\source\\netfile\\global\\engine\\nancy\\AbstractNancyBoot.cs:line 81\r\n   at Nancy.BeforePipeline.<>c__DisplayClass4.<Wrap>b__3(NancyContext ctx, CancellationToken ct)","errorMessages":[{"message":"Not authenticated","errorCode":null,"propertyName":null}]}
+2019-01-08 16:00:39,548 root         INFO     Starting Lobbyist API synchronization lifecycle
+2019-01-08 16:00:45,161 lobbyist_api_client DEBUG    Checking to verify the Lobbyist API system is ready
+2019-01-08 16:00:45,161 lobbyist_api_client DEBUG    Making GET HTTP request to http://localhost:12032/api/system
+2019-01-08 16:00:45,166 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:12032
+2019-01-08 16:00:45,178 urllib3.connectionpool DEBUG    http://localhost:12032 "GET /api/system HTTP/1.1" 200 None
+2019-01-08 16:00:45,180 lobbyist_api_client DEBUG    General Status: Ready
+2019-01-08 16:00:45,180 lobbyist_api_client DEBUG    System Name: LobbyistApi
+2019-01-08 16:00:45,180 lobbyist_api_client DEBUG    	Component Name: LobbyistApi
+2019-01-08 16:00:45,180 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 16:00:45,180 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 16:00:45,180 lobbyist_api_client DEBUG    	Component Build DateTime: 2019-01-08T15:29:48.3587573-08:00
+2019-01-08 16:00:45,181 lobbyist_api_client DEBUG    	Component Build Version: 1.0.0.0
+2019-01-08 16:00:45,181 lobbyist_api_client DEBUG    	Component Name: LobbyistEngine
+2019-01-08 16:00:45,181 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 16:00:45,181 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 16:00:45,181 lobbyist_api_client DEBUG    	Component Build DateTime: 2019-01-08T15:29:33.6537446-08:00
+2019-01-08 16:00:45,181 lobbyist_api_client DEBUG    	Component Build Version: 1.0.0.0
+2019-01-08 16:00:45,181 root         INFO     Lobbyist API Sync is Ready
+2019-01-08 16:00:45,181 root         INFO     Retrieving available Lobbyist sync feed
+2019-01-08 16:00:45,181 lobbyist_api_client DEBUG    Retrieving SyncFeed
+2019-01-08 16:00:45,182 lobbyist_api_client DEBUG    Making GET HTTP request to http://localhost:12032/api/lobbyist/v101/sync/feeds
+2019-01-08 16:00:45,184 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:12032
+2019-01-08 16:00:45,197 urllib3.connectionpool DEBUG    http://localhost:12032 "GET /api/lobbyist/v101/sync/feeds HTTP/1.1" 404 None
+2019-01-08 16:00:45,198 root         ERROR    Error running LobbyistApiClient: Error requesting Url: http://localhost:12032/api/lobbyist/v101/sync/feeds, Response code: 404. Error Message: {"message":"Requested resource was not found: http://localhost:12032/api/lobbyist/v101/sync/feeds","exceptionType":null,"stackTrace":null,"errorMessages":[{"message":"Requested resource was not found: http://localhost:12032/api/lobbyist/v101/sync/feeds","errorCode":null,"propertyName":null}]}
+2019-01-08 16:02:18,470 root         INFO     Starting Lobbyist API synchronization lifecycle
+2019-01-08 16:02:18,470 lobbyist_api_client DEBUG    Checking to verify the Lobbyist API system is ready
+2019-01-08 16:02:18,471 lobbyist_api_client DEBUG    Making GET HTTP request to http://localhost:12032/api/system
+2019-01-08 16:02:18,474 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:12032
+2019-01-08 16:02:18,482 urllib3.connectionpool DEBUG    http://localhost:12032 "GET /api/system HTTP/1.1" 200 None
+2019-01-08 16:02:18,484 lobbyist_api_client DEBUG    General Status: Ready
+2019-01-08 16:02:18,484 lobbyist_api_client DEBUG    System Name: LobbyistApi
+2019-01-08 16:02:18,484 lobbyist_api_client DEBUG    	Component Name: LobbyistApi
+2019-01-08 16:02:18,484 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 16:02:18,484 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 16:02:18,484 lobbyist_api_client DEBUG    	Component Build DateTime: 2019-01-08T15:29:48.3587573-08:00
+2019-01-08 16:02:18,485 lobbyist_api_client DEBUG    	Component Build Version: 1.0.0.0
+2019-01-08 16:02:18,485 lobbyist_api_client DEBUG    	Component Name: LobbyistEngine
+2019-01-08 16:02:18,485 lobbyist_api_client DEBUG    	Component Message: None
+2019-01-08 16:02:18,485 lobbyist_api_client DEBUG    	Component status: Ready
+2019-01-08 16:02:18,485 lobbyist_api_client DEBUG    	Component Build DateTime: 2019-01-08T15:29:33.6537446-08:00
+2019-01-08 16:02:18,485 lobbyist_api_client DEBUG    	Component Build Version: 1.0.0.0
+2019-01-08 16:02:18,485 root         INFO     Lobbyist API Sync is Ready
+2019-01-08 16:02:18,485 root         INFO     Retrieving available Lobbyist sync feed
+2019-01-08 16:02:18,485 lobbyist_api_client DEBUG    Retrieving SyncFeed
+2019-01-08 16:02:18,486 lobbyist_api_client DEBUG    Making GET HTTP request to http://localhost:12032/api/lobbyist/sync/feeds
+2019-01-08 16:02:18,488 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): localhost:12032
+2019-01-08 16:02:18,494 urllib3.connectionpool DEBUG    http://localhost:12032 "GET /api/lobbyist/sync/feeds HTTP/1.1" 404 None
+2019-01-08 16:02:18,495 root         ERROR    Error running LobbyistApiClient: Error requesting Url: http://localhost:12032/api/lobbyist/sync/feeds, Response code: 404. Error Message: {"message":"Requested resource was not found: http://localhost:12032/api/lobbyist/sync/feeds","exceptionType":null,"stackTrace":null,"errorMessages":[{"message":"Requested resource was not found: http://localhost:12032/api/lobbyist/sync/feeds","errorCode":null,"propertyName":null}]}
