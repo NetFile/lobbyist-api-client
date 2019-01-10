@@ -11,7 +11,7 @@ logger.addHandler(stream_handler)
 logger.addHandler(file_handler)
 
 # Set the logging level to logging.DEBUG for verbose output, or to logging.INFO for less verbose output
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 
 with open('../resources/config.json', 'r') as f:
     config = json.load(f)

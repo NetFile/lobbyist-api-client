@@ -1,3 +1,4 @@
 .idea/
 resources/config.json
 venv/
+*.pyc

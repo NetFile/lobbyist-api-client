@@ -44,7 +44,7 @@ def main():
             # TODO - Add 'Lobbyists' topic back to list when SyncKernel is supporting successfully. First error was AID required, then a 500 when AID was provided. Bailing on that for now.
             for topic in ['Filings', 'Clients', 'ActivityExpense', 'CampaignContributionMade', 'ContactOfPublicOfficial', 'PaymentReceived']:
                 offset = 0
-                page_size = 25
+                page_size = 5
                 logger.info(f'Synchronizing {topic}')
                 session_id = sync_session['id']
                 filings_qr = api_client.fetch_sync_topics(session_id, topic, page_size, offset)

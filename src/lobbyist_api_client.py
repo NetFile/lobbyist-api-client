@@ -67,11 +67,6 @@ class LobbyistApiClient:
         }
         return self.post_http_request(url, body)
 
-    # def retrieve_sync_feeds(self):
-    #     logger.debug('Retrieving SyncFeed')
-    #     url = self.base_url + Routes.SYNC_FEED
-    #     return self.get_http_request(url)
-
     def fetch_sync_topics(self, session_id, topic, limit=1000, offset=0):
         logger.debug(f'Fetching {topic} topic: offset={offset}, limit={limit}\n')
         params = {'limit': limit, 'offset': offset}
