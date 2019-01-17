@@ -42,7 +42,7 @@ def main():
             sync_session = sync_session_response['session']
 
             # TODO - Add 'Lobbyists' topic back to list when SyncKernel is supporting successfully. First error was AID required, then a 500 when AID was provided. Bailing on that for now.
-            for topic in ['Filings', 'Clients', 'ActivityExpense', 'CampaignContributionMade', 'ContactOfPublicOfficial', 'PaymentReceived']:
+            for topic in ['Filings', 'Clients', 'ActivityExpense', 'CampaignContributionMade', 'ContactOfPublicOfficial', 'PaymentReceived', 'Lobbyists']:
                 offset = 0
                 page_size = 5
                 logger.info(f'Synchronizing {topic}')
@@ -53,9 +53,8 @@ def main():
                     filings_qr = api_client.fetch_sync_topics(session_id, topic, page_size, offset)
 
             # Complete SyncSession
-            # TODO - Lobbyist Ext is not supporting autoComplete=False, so we cannot attempt to complete a Completed session
-            # logger.info('Completing sync session')
-            # api_client.execute_session_command(session_id, SyncSessionCommandType.Complete.name)
+            logger.info('Completing sync session')
+            api_client.execute_session_command(session_id, SyncSessionCommandType.Complete.name)
 
             # Cancel the subscription
             logger.info('Canceling subscription')

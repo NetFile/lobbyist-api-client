@@ -2,3 +2,4 @@
 resources/config.json
 venv/
 *.pyc
+logs/log.txt
