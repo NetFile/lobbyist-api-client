@@ -41,16 +41,17 @@ def main():
             # if sync_session_response['sync_data_available']:
             sync_session = sync_session_response['session']
 
-            # TODO - Add 'Lobbyists' topic back to list when SyncKernel is supporting successfully. First error was AID required, then a 500 when AID was provided. Bailing on that for now.
             for topic in ['Filings', 'Clients', 'ActivityExpense', 'CampaignContributionMade', 'ContactOfPublicOfficial', 'PaymentReceived', 'Lobbyists']:
                 offset = 0
-                page_size = 5
+                page_size = 50
                 logger.info(f'Synchronizing {topic}')
                 session_id = sync_session['id']
-                filings_qr = api_client.fetch_sync_topics(session_id, topic, page_size, offset)
-                while filings_qr['hasNextPage']:
+                query_results = api_client.fetch_sync_topics(session_id, topic, page_size, offset)
+                print_query_results(query_results)
+                while query_results['hasNextPage']:
                     offset = offset + page_size
-                    filings_qr = api_client.fetch_sync_topics(session_id, topic, page_size, offset)
+                    query_results = api_client.fetch_sync_topics(session_id, topic, page_size, offset)
+                    print_query_results(query_results)
 
             # Complete SyncSession
             logger.info('Completing sync session')
@@ -72,6 +73,19 @@ def main():
             api_client.execute_session_command(sync_session['id'], SyncSessionCommandType.Cancel.name)
         logger.error('Error running LobbyistApiClient: %s', ex)
         sys.exit()
+
+
+def print_query_results(query_results):
+    logger.debug(f'Total count: {query_results["totalCount"]}')
+    logger.debug(f'Offset: {query_results["offset"]}')
+    logger.debug(f'Page Size: {query_results["limit"]}')
+    logger.debug(f'Page Number: {query_results["pageNumber"]}')
+    logger.debug(f'Has Previous Page: {query_results["hasPreviousPage"]}')
+    logger.debug(f'Has Next Page: {query_results["hasNextPage"]}')
+    results = query_results['results']
+    logger.debug('No Results') if len(results) == 0 else logger.debug('Results')
+    for result in query_results['results']:
+        logger.debug(f'\t{result}')
 
 
 if __name__ == '__main__':

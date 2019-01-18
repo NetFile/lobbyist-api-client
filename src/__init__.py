@@ -11,13 +11,13 @@ logger.addHandler(stream_handler)
 logger.addHandler(file_handler)
 
 # Set the logging level to logging.DEBUG for verbose output, or to logging.INFO for less verbose output
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 with open('../resources/config.json', 'r') as f:
     config = json.load(f)
 
 # Variables below are set in resources/config.json file
-env = 'dev'
+env = 'preview'
 
 # Base URL of the API. Example - "https://netfile.com/filing/api"
 api_url = config[env.upper()]['API_URL']
