@@ -2,7 +2,6 @@ NetFile Lobbyist API Sync Client
 ================================
 Open source Python library to synchronize with the Lobbyist API data provided by NetFile, Inc.
 
-
 Included in the project is a script named lobbyist_api_main.py. This script contains example usage of the lobbyist_api_client.py file by demonstrating the complete process of syncing lobbyist data. This includes.
     - Check system status to verify the Lobbyist API is available and in a ready state
     - Creates a Sync Subscription

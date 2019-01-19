@@ -1,8 +1,10 @@
 #!/usr/bin/python
 
-import sys
 from enum import Enum
 import requests
+
+import sys
+sys.path.append('../')
 from src import *
 
 logger = logging.getLogger(__name__)
