@@ -10,12 +10,11 @@ def main():
     This demonstrates the complete lifecycle of the Lobbyist API sync process.
     1) Create a SyncSubscription
     2) Create a SyncSession using the SyncSubscription. This will be the start of the session
-    3) Synchronize Filing Activities
-    4) Synchronize Element Activities
-    5) Synchronize Transaction Activities
+    3) Synchronize Filings, Clients, Activity Expenses, Campaign Contributions Made, Contact Of Public Official, Payments Received, and Lobbyists
     5) Complete the SyncSession. This will be the end of the session
     6) Cancel the SyncSubscription. SyncSubscriptions are long living, and do not need to be canceled between SyncSessions
     """
+
     sync_session = None
     api_client = None
     try:
@@ -44,6 +43,7 @@ def main():
             for topic in ['Filings', 'Clients', 'ActivityExpense', 'CampaignContributionMade', 'ContactOfPublicOfficial', 'PaymentReceived', 'Lobbyists']:
                 offset = 0
                 page_size = 50
+                print('\\n')
                 logger.info(f'Synchronizing {topic}')
                 session_id = sync_session['id']
                 query_results = api_client.fetch_sync_topics(session_id, topic, page_size, offset)
@@ -62,8 +62,6 @@ def main():
             api_client.execute_subscription_command(subscription['id'], SyncSubscriptionCommandType.Cancel.name)
 
             logger.info('Synchronization lifecycle complete')
-            # else:
-            #     logger.info('No Sync Data Available. Nothing to retrieve')
         else:
             logger.info('The Lobbyist API system status is %s and is not Ready', sys_report.general_status)
     except Exception as ex:
@@ -76,14 +74,20 @@ def main():
 
 
 def print_query_results(query_results):
-    logger.debug(f'Total count: {query_results["totalCount"]}')
+    page_number = query_results["pageNumber"]
+    page_size = query_results["limit"]
+    total_count = query_results["totalCount"]
+    results = query_results['results']
+    current_record_count = (page_number-1)*page_size if page_number > 0 else page_number*page_size
+
+    logger.info(f'Retrieving {current_record_count+1} - {current_record_count+len(results)} of {total_count} records')
+    logger.debug(f'Total count: {total_count}')
     logger.debug(f'Offset: {query_results["offset"]}')
-    logger.debug(f'Page Size: {query_results["limit"]}')
-    logger.debug(f'Page Number: {query_results["pageNumber"]}')
+    logger.debug(f'Page Size: {page_size}')
+    logger.debug(f'Page Number: {page_number}')
     logger.debug(f'Has Previous Page: {query_results["hasPreviousPage"]}')
     logger.debug(f'Has Next Page: {query_results["hasNextPage"]}')
-    results = query_results['results']
-    logger.debug('No Results') if len(results) == 0 else logger.debug('Results')
+    logger.debug('No Results Available') if len(results) == 0 else logger.debug('Results')
     for result in query_results['results']:
         logger.debug(f'\t{result}')
 
