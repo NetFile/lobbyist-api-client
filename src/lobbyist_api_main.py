@@ -34,16 +34,16 @@ def main():
 
             # Create SyncSession
             logger.info('Creating sync session')
-            auto_complete_session = False
-            sync_session_response = api_client.create_session(subscription['id'], auto_complete_session)
+            subscription_id = subscription['id']
+            logger.info(f'Subscription ID: {subscription_id}')
 
-            # if sync_session_response['sync_data_available']:
+            sync_session_response = api_client.create_session(subscription_id)
             sync_session = sync_session_response['session']
 
+            # Sync all available topics
             for topic in ['Filings', 'Clients', 'ActivityExpense', 'CampaignContributionMade', 'ContactOfPublicOfficial', 'PaymentReceived', 'Lobbyists']:
                 offset = 0
                 page_size = 50
-                print('\\n')
                 logger.info(f'Synchronizing {topic}')
                 session_id = sync_session['id']
                 query_results = api_client.fetch_sync_topics(session_id, topic, page_size, offset)
@@ -79,17 +79,19 @@ def print_query_results(query_results):
     total_count = query_results["totalCount"]
     results = query_results['results']
     current_record_count = (page_number-1)*page_size if page_number > 0 else page_number*page_size
-
-    logger.info(f'Retrieving {current_record_count+1} - {current_record_count+len(results)} of {total_count} records')
-    logger.debug(f'Total count: {total_count}')
-    logger.debug(f'Offset: {query_results["offset"]}')
-    logger.debug(f'Page Size: {page_size}')
-    logger.debug(f'Page Number: {page_number}')
-    logger.debug(f'Has Previous Page: {query_results["hasPreviousPage"]}')
-    logger.debug(f'Has Next Page: {query_results["hasNextPage"]}')
-    logger.debug('No Results Available') if len(results) == 0 else logger.debug('Results')
-    for result in query_results['results']:
-        logger.debug(f'\t{result}')
+    if total_count > 0:
+        logger.info(f'Retrieving {current_record_count+1} - {current_record_count+len(results)} of {total_count} records')
+        logger.debug(f'Total count: {total_count}')
+        logger.debug(f'Offset: {query_results["offset"]}')
+        logger.debug(f'Page Size: {page_size}')
+        logger.debug(f'Page Number: {page_number}')
+        logger.debug(f'Has Previous Page: {query_results["hasPreviousPage"]}')
+        logger.debug(f'Has Next Page: {query_results["hasNextPage"]}')
+        logger.debug('No Results Available') if len(results) == 0 else logger.debug('Results')
+        for result in query_results['results']:
+            logger.debug(f'\t{result}')
+    else:
+        logger.info('No records available')
 
 
 if __name__ == '__main__':

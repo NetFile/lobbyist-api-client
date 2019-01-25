@@ -12,7 +12,6 @@ logger = logging.getLogger(__name__)
 
 class Routes:
     SYSTEM_REPORT = '/system'
-    SYNC_FEED = '/sync/feeds'
     SYNC_SUBSCRIPTIONS = '/sync/subscriptions'
     SYNC_SESSIONS = '/sync/sessions'
 
@@ -60,12 +59,11 @@ class LobbyistApiClient:
         }
         return self.post_http_request(url, body)
 
-    def create_session(self, sub_id, is_auto_complete=False):
+    def create_session(self, sub_id):
         logger.debug(f'Creating a SyncSession using SyncSubscription {sub_id}')
         url = self.base_url + Routes.SYNC_SESSIONS
         body = {
-            'subscriptionId': sub_id,
-            'autoComplete': is_auto_complete
+            'subscriptionId': sub_id
         }
         return self.post_http_request(url, body)
 
