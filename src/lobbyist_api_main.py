@@ -26,8 +26,8 @@ def main():
         if sys_report['generalStatus'].lower() == 'ready':
             logger.info('Lobbyist API Sync is Ready')
 
-            # Create SyncSubscription or use existing SyncSubscription with feed specified
-            name = 'My Lobbyist API Feed'
+            # Create SyncSubscription
+            name = 'My Lobbyist API Subscription'
             logger.info('Creating new subscription with name "%s"', name)
             subscription_response = api_client.create_subscription(name)
             subscription = subscription_response['subscription']

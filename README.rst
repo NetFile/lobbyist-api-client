@@ -2,6 +2,25 @@ NetFile Lobbyist API Sync Client
 ================================
 Open source Python library to synchronize with the Lobbyist API data provided by NetFile, Inc.
 
+Basic of the Sync Process
+    1. Check System Report to determine if API is Ready to receive requests
+    2. Create a Sync Subscription (designed to be maintained across many sessions)
+        * Can maintain existing subscription for many sessions
+        * Can be Canceled if necessary
+    3. Create a Sync Session
+        * Associated with a specific Sync Subscription
+        * Sync Session should be Completed when desired sync data has been retrieved
+        * Can be canceled in which case no reads will be recorded on the back end
+    4. Synchronize lobbyist records via available Sync Topics
+        * Filings, Clients, ActivityExpense, CampaignContributionMade, ContactOfPublicOfficial, PaymentReceived, Lobbyists
+        * The topics will sync beginning with the sequence last completed session
+    5. Complete or Cancel Sync Session
+        * If you are satisfied with the sync data retrieved, then Complete the Sync Session
+        * If you are not satisfied for any reason, Cancel the Sync Session
+            * The next Sync Session for the subscription will start over from the sequence of the last completed session
+    6. This will be the usual Sync life cycle.
+        * However, the Sync Subscription can be Canceled if needed, and the process will begin from scratch
+
 Included in the project is a script named lobbyist_api_main.py. This script contains example usage of the lobbyist_api_client.py file by demonstrating the complete process of syncing lobbyist data. This includes.
     - Check system status to verify the Lobbyist API is available and in a ready state
     - Creates a Sync Subscription
