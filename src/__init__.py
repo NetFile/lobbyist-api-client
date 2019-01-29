@@ -19,6 +19,9 @@ with open('../resources/config.json', 'r') as f:
 # Variables below are set in resources/config.json file
 env = 'preview'
 
+# Subscription id can be stored in config
+subscription_id = config[env.upper()]['SUBSCRIPTION_ID']
+
 # Base URL of the API. Example - "https://netfile.com/filing/api"
 api_url = config[env.upper()]['API_URL']
 # Username credential to authenticate against the Lobbyist API

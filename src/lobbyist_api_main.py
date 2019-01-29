@@ -1,8 +1,14 @@
 #!/usr/bin/python
 
 import sys
-from lobbyist_api_client import LobbyistApiClient, SyncSubscriptionCommandType, SyncSessionCommandType
+from lobbyist_api_client import LobbyistApiClient, SyncSessionCommandType
 from src import *
+
+
+def write_subscription_id(id_arg):
+    config[env.upper()]['SUBSCRIPTION_ID'] = id_arg
+    with open('../resources/config.json', 'w') as outfile:
+        json.dump(config, outfile)
 
 
 def main():
@@ -28,16 +34,22 @@ def main():
 
             # Create SyncSubscription
             name = 'My Lobbyist API Subscription'
-            logger.info('Creating new subscription with name "%s"', name)
-            subscription_response = api_client.create_subscription(name)
-            subscription = subscription_response['subscription']
 
-            # Create SyncSession
-            logger.info('Creating sync session')
-            subscription_id = subscription['id']
-            logger.info(f'Subscription ID: {subscription_id}')
+            if not subscription_id:
+                logger.info('Creating new subscription with name "%s"', name)
+                subscription_response = api_client.create_subscription(name)
+                subscription = subscription_response['subscription']
 
-            sync_session_response = api_client.create_session(subscription_id)
+                # Create SyncSession
+                logger.info('Creating sync session')
+                sub_id = subscription['id']
+
+                # Write Subscription ID to config.json file
+                write_subscription_id(sub_id)
+            else:
+                sub_id = subscription_id
+
+            sync_session_response = api_client.create_session(sub_id)
             sync_session = sync_session_response['session']
 
             # Sync all available topics
@@ -57,9 +69,9 @@ def main():
             logger.info('Completing sync session')
             api_client.execute_session_command(session_id, SyncSessionCommandType.Complete.name)
 
-            # Cancel the subscription
-            logger.info('Canceling subscription')
-            api_client.execute_subscription_command(subscription['id'], SyncSubscriptionCommandType.Cancel.name)
+            # Optionally, Cancel the subscription. Only done when no further use of subscription is required
+            # logger.info('Canceling subscription')
+            # api_client.execute_subscription_command(sub_id, SyncSubscriptionCommandType.Cancel.name)
 
             logger.info('Synchronization lifecycle complete')
         else:
