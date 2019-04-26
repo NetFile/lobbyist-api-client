@@ -35,8 +35,6 @@ Usage
 1) Create config.json file based on the included config.json.example file
     - Create copy of config.json.example file named config.json
     - Update the API_KEY and API_PASSWORD values with API credentials provided from NetFile
-2) Use the lobbyist_api_main.py file as a command line utility
-    - `python lobbyist_api_,main.py --help`
 
 System Requirements
 -------------------

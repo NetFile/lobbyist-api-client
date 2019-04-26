@@ -54,8 +54,7 @@ class LobbyistApiClient:
         logger.debug('Creating a SyncSubscription')
         url = self.base_url + Routes.SYNC_SUBSCRIPTIONS
         body = {
-            'name': subscription_name_arg,
-            'autoComplete': False
+            'name': subscription_name_arg
         }
         return self.post_http_request(url, body)
 

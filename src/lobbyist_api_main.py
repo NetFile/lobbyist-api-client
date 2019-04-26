@@ -71,7 +71,7 @@ def main():
 
             # Optionally, Cancel the subscription. Only done when no further use of subscription is required
             # logger.info('Canceling subscription')
-            # api_client.execute_subscription_command(sub_id, SyncSubscriptionCommandType.Cancel.name)
+            # api_client.execute_subscription_command(sub_id, 'Cancel')
 
             logger.info('Synchronization lifecycle complete')
         else:
